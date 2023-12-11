@@ -13,14 +13,14 @@
 
     <div class="container">
         <c:choose>
-            <c:when test="${mode = 'REGISTRATION'}">
+            <c:when test="${mode == 'REGISTRATION'}">
                 <form action="registerStudent" method="POST">
                     <div class="form-group">
                         <label for="name">Email:</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
                     </div>
                     <div class="form-group">
-                        <label for="surname">Password:</label>
+                        <label for="surname">Surname:</label>
                         <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname">
                     </div>
                     <div class="form-group">
@@ -29,14 +29,14 @@
                     </div>
                     <div class="form-group">
                         <label for="photo">Photo:</label>
-                        <input type="file" class="form-control" id="photo">
+                        <input type="file" id="photo" name="photo">
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
             </c:when>
             <c:when test="${mode == 'REGISTERED'}">
                 <div class="card-body text-center">
-                    <img src="${student.photo.getOriginalFileName()}" alt="avatar"
+                    <img src="avatar.png" alt="avatar"
                          class="rounded-circle img-fluid" style="width: 150px; height: 100px;">
                     <h5 class="my-3">Student name: ${student.name}</h5>
                     <p class="text-muted mb-1">Student surname: ${student.surname}</p>

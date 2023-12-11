@@ -5,14 +5,16 @@ import org.springframework.web.multipart.MultipartFile;
 public class Student {
     private String name;
     private String surname;
-    private String age;
+    private int age;
     private MultipartFile photo;
 
-    public Student(String name, String surname, String age, MultipartFile photo) {
+    public Student(String name, String surname, int age, MultipartFile photo) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.photo = photo;
+    }
+    public Student() {
     }
 
     public String getName() {
@@ -30,14 +32,9 @@ public class Student {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    public int getAge() { return age; }
 
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
+    public void setAge(int age) { this.age = age; }
 
     public MultipartFile getPhoto() {
         return photo;
@@ -56,4 +53,6 @@ public class Student {
                 ", photo=" + photo +
                 '}';
     }
+
+
 }
