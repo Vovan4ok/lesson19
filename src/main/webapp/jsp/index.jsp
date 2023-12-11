@@ -14,7 +14,7 @@
     <div class="container">
         <c:choose>
             <c:when test="${mode == 'REGISTRATION'}">
-                <form action="registerStudent" method="POST">
+                <form action="registerStudent" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">Email:</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
@@ -36,8 +36,9 @@
             </c:when>
             <c:when test="${mode == 'REGISTERED'}">
                 <div class="card-body text-center">
-                    <img src="avatar.png" alt="avatar"
+                    <img th:src="@{'/images/' + ${student.photo.getOriginalFilename()}}" alt="avatar"
                          class="rounded-circle img-fluid" style="width: 150px; height: 100px;">
+                    <h5 class="my-3">Student name: ${student.photo.getOriginalFilename()}</h5>
                     <h5 class="my-3">Student name: ${student.name}</h5>
                     <p class="text-muted mb-1">Student surname: ${student.surname}</p>
                     <p class="text-muted mb-4">Student age: ${student.age}</p>
