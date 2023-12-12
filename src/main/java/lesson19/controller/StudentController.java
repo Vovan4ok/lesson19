@@ -35,8 +35,8 @@ public class StudentController {
     }
 
     public void saveFile(MultipartFile file) throws IOException {
-        Files.createDirectories(Paths.get("src/main/webapp/jsp/images/"));
-        String folder = "src/main/webapp/jsp/images/";
+        Files.createDirectories(Paths.get("target/classes/static/images/"));
+        String folder = "target/classes/static/images/";
         byte[] bytes = file.getBytes();
         Path path = Paths.get(folder + file.getOriginalFilename());
         Files.write(path, bytes);

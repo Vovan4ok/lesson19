@@ -37,7 +37,7 @@
             </c:when>
             <c:when test="${mode == 'REGISTERED'}">
                 <div class="card-body text-center">
-                    <img src="<c:url value='/images/${student.photo.getOriginalFilename()}'/>" alt="avatar"
+                    <img src="/images/${student.photo.getOriginalFilename()}" alt="avatar"
                          class="rounded-circle img-fluid" style="width: 150px; height: 100px;">
                     <h5 class="my-3">Student name: ${student.name}</h5>
                     <p class="text-muted mb-1">Student surname: ${student.surname}</p>
