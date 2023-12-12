@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
 <head>
     <title>Student-form</title>
     <meta charset="utf-8">
@@ -36,9 +37,8 @@
             </c:when>
             <c:when test="${mode == 'REGISTERED'}">
                 <div class="card-body text-center">
-                    <img th:src="@{'/images/' + ${student.photo.getOriginalFilename()}}" alt="avatar"
+                    <img src="<c:url value='/images/${student.photo.getOriginalFilename()}'/>" alt="avatar"
                          class="rounded-circle img-fluid" style="width: 150px; height: 100px;">
-                    <h5 class="my-3">Student name: ${student.photo.getOriginalFilename()}</h5>
                     <h5 class="my-3">Student name: ${student.name}</h5>
                     <p class="text-muted mb-1">Student surname: ${student.surname}</p>
                     <p class="text-muted mb-4">Student age: ${student.age}</p>
